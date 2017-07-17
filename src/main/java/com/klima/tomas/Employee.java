@@ -15,14 +15,14 @@ public class Employee {
     @GeneratedValue
     Long id;
     private String firstName;
-    private String lastName;
+    private String surname;
     private String description;
 
     private Employee() {}
 
-    public Employee(String firstName, String lastName, String description) {
+    public Employee(String firstName, String surname, String description) {
         this.firstName = firstName;
-        this.lastName = lastName;
+        this.surname = surname;
         this.description = description;
     }
 }
