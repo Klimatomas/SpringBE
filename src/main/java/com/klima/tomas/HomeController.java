@@ -16,13 +16,11 @@ public class HomeController {
         this.repository = repository;
     }
 
-    @RequestMapping(method = RequestMethod.POST, value = "/newemployee")
+    @RequestMapping(method = RequestMethod.POST, value = "/api/newemployee")
     public String addEmployee(@RequestBody String request){
 
-        JSONObject jsonObject = new Gson().fromJson(request, JSONObject.class);
-        this.repository.save(new Employee(jsonObject.get("firstName").toString(),
-            jsonObject.get("surname").toString(),
-            jsonObject.get("description").toString()));
+        Employee employee = new Gson().fromJson(request, Employee.class);
+        this.repository.save(employee);
 
         return ("index");
     }
