@@ -25,7 +25,6 @@ public class HomeController {
         return ("index");
     }
 
-    @CrossOrigin
     @RequestMapping(method = RequestMethod.DELETE, value = "/api/deleteEmployee")
     public String deleteEmployee(@RequestBody String request) {
         Employee employee = new Gson().fromJson(request, Employee.class);

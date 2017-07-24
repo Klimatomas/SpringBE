@@ -27,7 +27,7 @@ public class SpringBEApplication {
             return new WebMvcConfigurerAdapter() {
                 @Override
                 public void addCorsMappings(CorsRegistry registry) {
-                    registry.addMapping("/**").allowedMethods("DELETE");
+                    registry.addMapping("/**").allowedMethods("DELETE", "GET", "POST");
                 }
             };
         }
